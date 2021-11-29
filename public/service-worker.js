@@ -21,7 +21,7 @@ self.addEventListener('install', (event) => {
 });
   
 self.addEventListener("fetch", function(evt) {
-  if (evt.request.url.includes("/api/")) {
+  if (evt.request.url.includes("/api/transaction")) {
     evt.respondWith(
       caches.open(RUNTIME).then(cache => {
         return fetch(evt.request)
